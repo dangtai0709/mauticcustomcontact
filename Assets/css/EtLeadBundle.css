@@ -1,0 +1,103 @@
+/*=========================================== Custom css for Lead ============================================ */
+/* Custom list status in list contacts */
+#list-status ul {
+  list-style: none;
+  padding-left: 0;
+  padding: 15px;
+}
+#list-status ul li {
+  list-style: none;
+  display: inline-block;
+}
+#list-status ul li a {
+  padding: 5px 10px;
+  display: block;
+  transition: 0.2s;
+}
+#list-status ul li a.active,
+#list-status ul li a:hover {
+  background: #ff7a59;
+  color: white;
+}
+.status-all {
+  color: black;
+  background-color: #e5f5f8;
+}
+.status-new {
+  color: black;
+  background-color: #f26c4f;
+}
+.status-follow {
+  color: black;
+  background-color: #fdf568;
+}
+.status-quality {
+  color: black;
+  background-color: #39b54a;
+}
+.status-desposit {
+  color: black;
+  background-color: #f7941c;
+}
+.status-converted {
+  color: black;
+  background-color: #3cdde4;
+}
+.status-un_quality {
+  color: black;
+  background-color: #acacac;
+}
+.status-add_tab {
+  border: 1px solid;
+}
+td span[class^="status-"] {
+  width: 80%;
+  display: block;
+  text-align: center;
+  padding: 3px;
+  text-transform: capitalize;
+}
+.list-group{
+  margin-bottom: 0;
+}
+.segment-button.btn-group.toolbar-standard.hidden-xs.hidden-sm{
+  padding-right: 0;
+}
+.segment-button.btn-group.toolbar-standard.hidden-xs.hidden-sm {
+  display: grid;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.available-filters{
+  padding-right: 0px;
+}
+/* // */
+.page-header-contact .std-toolbar > a.btn-default {
+  padding: 10px;
+  margin-left: 5px;
+  border-radius: 3px !important;
+  font-size: 14px;
+}
+.page-header-contact .std-toolbar > a.btn-add-new-contact {
+  color: white;
+  background: #ff7a59;
+  border-color: #ff7a59;
+}
+.page-header-contact .std-toolbar > a.btn-import-contact {
+  color: #ff7a59;
+}
+.page-header-contact .toolbar-list-contact {
+  display: flex;
+  justify-content: flex-end;
+}
+.page-header-contact .list-action-toolbar a {
+  font-size: 14px;
+  margin-right: 5px;
+  padding: 10px;
+  display: block;
+  float: left;
+}
+.page-header-contact .search-contact .btn.btn-default,
+.page-header-contact .search-contact input.search {
+  height: 42px;
+}

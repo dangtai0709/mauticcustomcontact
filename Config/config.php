@@ -5,18 +5,18 @@ return [
     'description' => 'Custom contact for Mautic',
     'author'      => 'ET Team',
     'version'     => '0.0.1',
-    // 'routes'      => [
-    //     'main' => [
-    //         'mautic_plugin_custom_column' => [
-    //             'path'       => '/custom/column',
-    //             'controller' => 'MauticCustomContactBundle:CustomContact:show',
-    //         ],
-    //         'mautic_plugin_custom_column_save' => [
-    //             'path'       => '/custom-column/saveconfig',
-    //             'controller' => 'MauticCustomContactBundle:CustomContact:saveConfig',
-    //         ],
-    //     ],
-    // ],
+    'routes'      => [
+        'main' => [
+            'mautic_contact_index' => [
+                'path'       => '/contacts/{page}',
+                'controller' => 'MauticCustomContactBundle:CustomContact:index',
+            ],
+            'mautic_contact_action' => [
+                'path'       => '/contacts/{objectAction}/{objectId}',
+                'controller' => 'MauticCustomContactBundle:CustomContact:execute',
+            ],
+        ],
+    ],
     'services'    => [
         'events' => [
             'mautic.plugin.custom.contact.subscriber' => [
@@ -26,13 +26,21 @@ return [
                     'mautic.section.helper'
                 ],
             ],
-           
         ],
         'forms'   => [
         ],
         'command' => [
         ],
         'other'   => [
+            'mautic.service.contact_columnnd_dictionary' => [
+                'class'     => \MauticPlugin\MauticCustomContactBundle\Services\ContactColumnsDictionary::class,
+                'arguments' => [
+                    'mautic.lead.model.field',
+                    'translator',
+                    'mautic.helper.core_parameters',
+                    'mautic.helper.integration',
+                ],
+            ],
         ],
 
         'helpers'      => [

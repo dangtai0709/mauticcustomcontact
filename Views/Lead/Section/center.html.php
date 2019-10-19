@@ -1,5 +1,5 @@
 <div class="box-layout">
-    <div class="col-md-2 bg-white  height-auto pa-lg ">
+    <div class="col-md-4 bg-white  height-auto pa-lg ">
         <?php if (!$lead->isAnonymous()): ?>
         <div class="img-wrapper img-rounded mr-10 mb-sm">
             <div class="collapse in" id="lead-avatar-block">

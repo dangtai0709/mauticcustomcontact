@@ -59,12 +59,6 @@ class CustomContactSubscriber extends CommonSubscriber
         if (false === $integration || !$integration->getIntegrationSettings()->getIsPublished()) {
             return;
         }
-       // dump($event->getVars()["lead"]->getId());die;
-    //    dump($event->getViewName());
-      //dump($event->getContext());
-        // dump($event->getContent());
-        // dump($event->getTemplates());
-    
         if ($event->getContext() == 'section.left') {
             
             $event->addContent($this->sectionHelper->getTeleInfo($event->getVars()["lead"]->getId()));
@@ -74,8 +68,6 @@ class CustomContactSubscriber extends CommonSubscriber
             $event->addContent($this->sectionHelper->getDealProfile($event->getVars()["lead"]->getId()));
         }
         if ($event->getContext() == 'section.center') {
-            // $data=$event->getVars();
-            // dump($data);die;
             $event->addContent($this->sectionHelper->getContactProfile($event->getVars()["lead"]->getId(),$event->getVars()));
         }
 
